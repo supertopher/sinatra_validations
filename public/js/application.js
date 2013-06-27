@@ -1,4 +1,18 @@
 $(document).ready(function(){
+  // Jquery UI Datepicker
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+  // hide new event form
+  $('.new_action').hide();
+  // Create event AJAX form
+  $('.create').click(function(event){
+    event.preventDefault();
+    $('.new_action').show();
+  });
+
+  // AJAX front page live event loading
   $('.event_link').click(function(event){
     event.preventDefault();
     var current_link = $(this);
@@ -7,7 +21,6 @@ $(document).ready(function(){
       url: show_link,
       method: 'GET'
     }).done(function(requestData){
-      // $('<hr/ class="find">').remove();
       $('.invite').remove();
       $(current_link).prepend('<hr/ class="invite">');
       $(current_link).parent().append(requestData + '<hr/ class="invite">');

@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/application.css">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/js/application.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    <title>Sexy Event Handler</title>
-  </head>
-  <body>
+  <title>Sexy Event Handler</title>
+</head>
+<body>
 
-    <nav>
+  <nav>
     <ul>
-      <li><a href="/events/new">Create Event</a></li>
-      <li><a href="/">All events</a></li>
+      <li><a href="/" method="POST" class="create">Create Event</a></li>
     </ul>
-    </nav>
+    <form class="new_action" action="/events/new" method="post">
+      Invite all your friends to:
+      <br>
+      <input type="text" name="event[title]" placeholder="Event Title">
+      <br/>
+      <input type="text" name="event[organizer_name]" placeholder="Your Name">
+      <input type="text" name="event[email]" placeholder="Your Email">
+      Date: <input type="text" id="datepicker" /></p>
+      <!-- <input type="text" name="event[date]"  placeholder="Date" id="datepicker"> -->
+      <input type="submit" value="Create Event!">
+    </form>
+  </nav>
 
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
 </html>
