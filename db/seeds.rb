@@ -2,8 +2,8 @@ require 'faker'
 
 10.times do |i|
   Event.create({
-    :date => Date.today + i,
-    :title => "Event #{i}",
-    :organizer_name => "Organizer #{i}",
-    :organizer_email => "organizer_#{i}@example.com" })
+    :date => Time.at(rand * Time.now.to_i),
+    :title => Faker::Company.catch_phrase,
+    :organizer_name => Faker::Company.catch_phrase,
+    :organizer_email => Faker::Internet.email })
 end
