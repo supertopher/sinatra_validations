@@ -17,15 +17,14 @@
     <ul>
       <li><a href="/" method="POST" class="create">Create Event</a></li>
     </ul>
-    <form class="new_action" action="/events/new" method="post">
+    <form class="new_action" action="/" method="post">
       Invite all your friends to:
       <br>
       <input type="text" name="event[title]" placeholder="Event Title">
       <br/>
       <input type="text" name="event[organizer_name]" placeholder="Your Name">
-      <input type="text" name="event[email]" placeholder="Your Email">
-      Date: <input type="text" id="datepicker" /></p>
-      <!-- <input type="text" name="event[date]"  placeholder="Date" id="datepicker"> -->
+      <input type="text" name="event[organizer_email]" placeholder="Your Email">
+      Date: <input type="text" name="event[date]" placeholder="Date" id="datepicker">
       <input type="submit" value="Create Event!">
     </form>
   </nav>

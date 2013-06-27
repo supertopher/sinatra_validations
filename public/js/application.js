@@ -2,6 +2,7 @@ $(document).ready(function(){
   // Jquery UI Datepicker
   $(function() {
     $( "#datepicker" ).datepicker();
+    $.datepicker.formatDate("W3C");
   });
 
   // hide new event form

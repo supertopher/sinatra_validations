@@ -4,7 +4,8 @@ get '/' do
 end
 
 post '/' do
-  # Event.create(title: params[:title], organizer_name:, params[:organizer_name], email: params[:email])
+  p params[:event]
+  Event.create(params[:event])
 end
 
 get '/events/:id/show' do |id|
