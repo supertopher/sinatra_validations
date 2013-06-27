@@ -17,6 +17,9 @@
     <ul>
       <li><a href="/" method="POST" class="create">Create Event</a></li>
     </ul>
+    <% if @errors %>
+      <span class="errors">The following errors occured while submitting that form</span>
+    <% end %>
     <form class="new_action" action="/" method="post">
       Invite all your friends to:
       <br>

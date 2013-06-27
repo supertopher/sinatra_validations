@@ -13,6 +13,7 @@ $(document).ready(function(){
     $('.new_action').show();
   });
 
+
   // AJAX front page live event loading
   $('.event_link').click(function(event){
     event.preventDefault();
