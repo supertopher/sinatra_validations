@@ -5,7 +5,7 @@ end
 
 get '/events/:id/show' do |id|
   @event = Event.find(id)
-  erb :event_show
+  erb :event_show, :layout => false
 end
 
 get '/events/new' do
