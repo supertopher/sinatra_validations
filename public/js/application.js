@@ -1,8 +1,8 @@
 $(document).ready(function(){
   // Jquery UI Datepicker
+  $.datepicker.formatDate("W3C");
   $(function() {
     $( "#datepicker" ).datepicker();
-    $.datepicker.formatDate("W3C");
   });
 
   // hide new event form
