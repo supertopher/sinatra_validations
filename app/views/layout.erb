@@ -13,23 +13,18 @@
 </head>
 <body>
 
+  <% if @event && !@event.errors.empty? %>
+    <% @event.errors.each do |field, message| %>
+      <span class="error"><%=field%> <%=message%></span>
+    <% end %>
+  <% end %>
+
+  <br/>
   <nav>
     <ul>
       <li><a href="/" method="POST" class="create">Create Event</a></li>
     </ul>
-    <% if @errors %>
-      <span class="errors">The following errors occured while submitting that form</span>
-    <% end %>
-    <form class="new_action" action="/" method="post">
-      Invite all your friends to:
-      <br>
-      <input type="text" name="event[title]" placeholder="Event Title">
-      <br/>
-      <input type="text" name="event[organizer_name]" placeholder="Your Name">
-      <input type="text" name="event[organizer_email]" placeholder="Your Email">
-      Date: <input type="text" name="event[date]" placeholder="Date" id="datepicker">
-      <input type="submit" value="Create Event!">
-    </form>
+    <%= erb :_event_form %>
   </nav>
 
   <div class="container">

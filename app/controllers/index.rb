@@ -6,8 +6,13 @@ end
 
 post '/' do
   p params[:event]
-  Event.create(params[:event])
-  redirect '/'
+  @event = Event.create(params[:event])
+  @events = Event.all
+  if @event.valid?
+    redirect '/'
+  else
+    erb :index
+  end
 end
 
 get '/events/:id/show' do |id|

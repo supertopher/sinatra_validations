@@ -14,6 +14,12 @@
   width: 800px;
   border: 3px;
 }
+.error{
+  text-align: center;
+  background-color: red;
+  color: white
+  margin 0 auto;
+}
 
 nav {
   float: center;
